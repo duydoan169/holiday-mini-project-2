@@ -27,11 +27,11 @@ public class DataSeeder implements CommandLineRunner {
             departmentRepository.save(marketing);
             departmentRepository.save(hr);
 
-            employeeRepository.save(new Employee(null, "Nguyen Van A", 28, "avatar1.png", "ACTIVE", engineering));
-            employeeRepository.save(new Employee(null, "Tran Thi B", 32, "avatar2.png", "ACTIVE", marketing));
-            employeeRepository.save(new Employee(null, "Le Van C", 25, "avatar3.png", "INACTIVE", engineering));
-            employeeRepository.save(new Employee(null, "Pham Thi D", 30, "avatar4.png", "ACTIVE", hr));
-            employeeRepository.save(new Employee(null, "Hoang Van E", 27, "avatar5.png", "ACTIVE", marketing));
+            employeeRepository.save(new Employee(null, "Nguyen Van A", 28, null, "ACTIVE", engineering));
+            employeeRepository.save(new Employee(null, "Tran Thi B", 32, null, "ACTIVE", marketing));
+            employeeRepository.save(new Employee(null, "Le Van C", 25, null, "INACTIVE", engineering));
+            employeeRepository.save(new Employee(null, "Pham Thi D", 30, null, "ACTIVE", hr));
+            employeeRepository.save(new Employee(null, "Hoang Van E", 27, null, "ACTIVE", marketing));
         }
     }
 }

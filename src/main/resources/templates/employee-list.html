@@ -10,7 +10,7 @@
 <body>
 
 <h2 style="margin: 10px 5px">Employee List</h2>
-
+<a th:href="@{/employees/create}" class="btn btn-primary" style="margin-bottom: 10px">Add employee</a>
 <table class="table table-striped table-inverse">
   <thead class="thead-inverse">
   <tr>
@@ -27,7 +27,13 @@
     <td class="text-center" th:text="${emp.id}"></td>
     <td th:text="${emp.name}"></td>
     <td th:text="${emp.age}"></td>
-    <td th:text="${emp.avatar}"></td>
+    <td>
+      <img th:if="${emp.avatar != null}"
+           th:src="${emp.avatar}"
+           width="50" height="50"
+           style="object-fit: cover; border-radius: 50%"/>
+      <span th:if="${emp.avatar == null}">Chưa có ảnh</span>
+    </td>
     <td th:text="${emp.status}"></td>
     <td th:text="${emp.department.name}"></td>
   </tr>
