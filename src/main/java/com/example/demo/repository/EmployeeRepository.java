@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 
     @Query("""
-    select e from Employee e where 
+        select e from Employee e where 
         lower(e.name) like lower(concat('%', :search, '%')) 
     """)
     public Page<Employee> search(@Param("search") String search, Pageable pageable);
