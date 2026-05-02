@@ -27,7 +27,7 @@ public class EmployeeController {
     public String listEmployees(Model model,
                                 @RequestParam(defaultValue = "") String search,
                                 @RequestParam(defaultValue = "asc") String sortDirection,
-                                @RequestParam(defaultValue = "name") String sortField,
+                                @RequestParam(defaultValue = "id") String sortField,
                                 @PageableDefault(page = 0, size = 5) Pageable pageable) {
         Page<Employee> result = employeeService.search(search, pageable);
         model.addAttribute("pageable", result);

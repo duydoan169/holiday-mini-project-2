@@ -17,6 +17,7 @@
       <input type="text" th:value="${search}" name="search" placeholder="Search" style="height: 35px; width: 700px">
     </div>
     <select name="sort" style="height: 35px;">
+      <option value="id,asc" th:selected="${sortField == 'id' and sortDirection == 'asc'}" hidden="hidden" disabled>Sort</option>
       <option value="name,asc" th:selected="${sortField == 'name' and sortDirection == 'asc'}">Name A-Z</option>
       <option value="name,desc" th:selected="${sortField == 'name' and sortDirection == 'desc'}">Name Z-A</option>
       <option value="age,asc" th:selected="${sortField == 'age' and sortDirection == 'asc'}">Age Ascending</option>
