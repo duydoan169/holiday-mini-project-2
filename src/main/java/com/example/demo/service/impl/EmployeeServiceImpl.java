@@ -8,6 +8,8 @@ import com.example.demo.repository.EmployeeRepository;
 import com.example.demo.service.EmployeeService;
 import com.example.demo.service.upload.UploadService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -40,5 +42,10 @@ public class EmployeeServiceImpl implements EmployeeService {
         employee.setDepartment(department);
 
         employeeRepository.save(employee);
+    }
+
+    @Override
+    public Page<Employee> search(String search, Pageable pageable) {
+        return employeeRepository.search(search, pageable);
     }
 }
