@@ -24,5 +24,6 @@ public class EmployeeDTO {
     @NotNull(message = "Phòng ban không được để trống")
     private Long departmentId;
 
+    @NotNull(message = "File không được để trống")
     private MultipartFile file;
 }

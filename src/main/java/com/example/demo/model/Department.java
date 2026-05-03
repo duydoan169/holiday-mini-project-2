@@ -26,6 +26,6 @@ public class Department {
     @Column(name = "location")
     private String location;
 
-    @OneToMany(mappedBy = "department", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "department", cascade = CascadeType.MERGE, fetch = FetchType.LAZY)
     private List<Employee> employees;
 }

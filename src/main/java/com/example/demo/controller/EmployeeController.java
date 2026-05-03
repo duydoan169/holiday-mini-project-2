@@ -26,14 +26,21 @@ public class EmployeeController {
     @GetMapping
     public String listEmployees(Model model,
                                 @RequestParam(defaultValue = "") String search,
+                                @RequestParam(required = false) Long departmentId,
+                                @RequestParam(required = false) Integer minAge,
+                                @RequestParam(required = false) Integer maxAge,
                                 @RequestParam(defaultValue = "asc") String sortDirection,
                                 @RequestParam(defaultValue = "id") String sortField,
                                 @PageableDefault(page = 0, size = 5) Pageable pageable) {
-        Page<Employee> result = employeeService.search(search, pageable);
+        Page<Employee> result = employeeService.search(search, departmentId, minAge, maxAge, pageable);
         model.addAttribute("pageable", result);
         model.addAttribute("search", search);
+        model.addAttribute("departmentId", departmentId);
+        model.addAttribute("minAge", minAge);
+        model.addAttribute("maxAge", maxAge);
         model.addAttribute("sortField", sortField);
         model.addAttribute("sortDirection", sortDirection);
+        model.addAttribute("departments", departmentRepository.findAll());
         return "employee-list";
     }
 

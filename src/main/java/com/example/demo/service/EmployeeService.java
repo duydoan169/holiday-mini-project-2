@@ -9,6 +9,6 @@ import java.util.List;
 
 public interface EmployeeService {
     List<Employee> getAllEmployee();
-    void saveEmployee(EmployeeDTO employeeDTO);
-    Page<Employee> search(String search, Pageable pageable);
+    void saveEmployee(EmployeeDTO dto);
+    Page<Employee> search(String search, Long departmentId, Integer minAge, Integer maxAge, Pageable pageable);
 }

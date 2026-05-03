@@ -45,7 +45,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public Page<Employee> search(String search, Pageable pageable) {
-        return employeeRepository.search(search, pageable);
+    public Page<Employee> search(String search, Long departmentId, Integer minAge, Integer maxAge, Pageable pageable) {
+        return employeeRepository.search(search, departmentId, minAge, maxAge, pageable);
     }
 }

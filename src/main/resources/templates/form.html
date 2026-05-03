@@ -46,6 +46,7 @@
         <div class="form-group">
             <label>Ảnh đại diện</label>
             <input type="file" class="form-control" th:field="*{file}" accept="image/*" />
+            <span th:if="${#fields.hasErrors('file')}" th:text="${#fields.errors('file')[0]}" class="text-danger"></span>
         </div>
 
         <a th:href="@{/employees}" class="btn btn-secondary">Quay lại</a>
